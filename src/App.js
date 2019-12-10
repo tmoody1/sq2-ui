@@ -4,8 +4,6 @@ import data from './mocks/bookData.json';
 import * as Sc from './styledComponents';
 
 const App = compose(
-  lifecycle(
-  )
 )(() => {
   return (
     <Sc.AppWrapper>
