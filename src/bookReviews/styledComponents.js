@@ -60,7 +60,6 @@ export const CommentTextarea = styled(Input.Textarea)`
 `
 
 export const SaveButton = styled(Button)`
-  margin-top: 20px;
 `
 
 export const Likes = styled(Flex)`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as Sc from './styledComponents'
-import { Card, Button, IconMono } from '@imanage/react-ice'
+import { Card, Button, IconMono, Flex } from '@imanage/react-ice'
 import { useParams } from 'react-router-dom'
 import { path } from 'ramda'
 
@@ -17,8 +17,13 @@ const BookReviews = ({ books, likeReview }) => {
 
   const onComment = (reviewId) => {
     const updatedBook = appendComment(currentBook, name, comment, reviewId)
-    console.log('updated', updatedBook)
     setCurrentBook(updatedBook)
+    setName('')
+    setComment('')
+    setAddComment(false)
+  }
+
+  const cancelComment = () => {
     setName('')
     setComment('')
     setAddComment(false)
@@ -54,13 +59,12 @@ const BookReviews = ({ books, likeReview }) => {
               <Sc.CommentInputContainer>
                 <Sc.NameInput onChange={e => setName(e.target.value)} value={name} label='Name' required />
                 <Sc.CommentTextarea onChange={e => setComment(e.target.value)} value={comment} label='Comment' />
-                <Sc.SaveButton
-                  onClick={() => onComment(
-                    review.id,
-                  )}
-                >
-                  Save
-                </Sc.SaveButton>
+                <Flex w='100%' mt='20px' align='center' justify='flex-end'>
+                  <Button variant='tertiary' onClick={cancelComment}>Cancel</Button>
+                  <Sc.SaveButton onClick={() => onComment(review.id)}>
+                    Save
+                  </Sc.SaveButton>
+                </Flex>
               </Sc.CommentInputContainer>
             )
             : (
