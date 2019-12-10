@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Day of the Triffids",
+    "author": "John Wyndham",
+    "publishDate": "2008-08-07",
+    "isbn": "978-0141033006",
+    "reviews": [
+      {
+        "id": "978-0141033006-01",
+        "author": "Jody",
+        "text": "Best book i've ever read",
+        "likes": 203,
+        "comments": [
+          {
+            "author": "Thomas",
+            "id": "01",
+            "text": "I agree"
+          },
+          {
+            "author": "james",
+            "id": "02",
+            "text": "I also agree"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "publishDate": "2004-09-09",
+    "isbn": "978-0141033345",
+    "reviews": [
+      {
+        "id": "978-0141033345-01",
+        "author": "Endika",
+        "text": "So scary",
+        "likes": 13,
+        "comments": [
+          {
+            "author": "Sandhya",
+            "id": "01",
+            "text": "wimp"
+          }
+        ]
+      }
+    ]
+  }
+]
