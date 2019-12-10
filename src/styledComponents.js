@@ -1,12 +1,6 @@
 import styled from 'styled-components'
-
-const COLORS = {
-  BASE: '#FFEAD0', // ALMOND
-  TEXT: '#113537', // SLATE
-  SHADOW: '#37505C', // LIGHT SLATE
-  LINK: '#F76F8E', // PINK
-  BACKGROUND: '#96616B', //DARK PINK
-}
+import { COLORS } from './colors'
+import { Card } from '@imanage/react-ice'
 
 export const AppWrapper = styled.div`
   display: flex;
@@ -14,7 +8,6 @@ export const AppWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: ${COLORS.BASE};
 `
 
 export const Header = styled.div`
@@ -22,14 +15,7 @@ export const Header = styled.div`
   align-items: center;
   width: 100%;
   height: 50px;
-  background-color: ${COLORS.SHADOW};
-  padding: 12px;
-`
-
-export const HeaderText = styled.h1`
-  color: white;
-  font-size: 18px;
-  margin-left: 12px;
+  background-color: ${COLORS.LINK};
 `
 
 export const Body = styled.div`
@@ -41,12 +27,28 @@ export const Body = styled.div`
 `
 
 
-export const BookWrapper = styled.div`
-  width: 70%;
-  height: 200px;
-  border: 1px solid ${COLORS.TEXT};
-  box-shadow: 0 0 4px ${COLORS.SHADOW};
-  background-color: ${COLORS.BACKGROUND};
-  border-radius: 4px;
-  margin: 6px;
+export const BookWrapper = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 12px;
+`
+
+export const BookTitle = styled.h2`
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  font-size: 20px;
+`
+
+export const BookMetadata = styled(Card.Content)`
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+`
+
+export const Author = styled.div``
+export const PublishDate = styled.div``
+export const ReviewCount = styled.div`
+  cursor: pointer;
 `

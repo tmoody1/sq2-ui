@@ -1,0 +1,7 @@
+export const COLORS = {
+  BASE: '#FFEAD0', // ALMOND
+  TEXT: '#113537', // SLATE
+  SHADOW: '#37505C', // LIGHT SLATE
+  LINK: '#F76F8E', // PINK
+  BACKGROUND: '#96616B', //DARK PINK
+}
