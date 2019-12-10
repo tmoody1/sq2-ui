@@ -1,8 +1,6 @@
 import React from 'react'
 import * as Sc from './styledComponents'
-import { Card } from '@imanage/react-ice'
-
-import { Link } from 'react-router-dom'
+import { Card, Button } from '@imanage/react-ice'
 
 
 const BookList = ({ setCurrentBook, books}) => {
@@ -14,9 +12,11 @@ const BookList = ({ setCurrentBook, books}) => {
           <Sc.BookMetadata>
             <Sc.Author>Author: {d.author}</Sc.Author>
             <Sc.PublishDate>Published: {d.publishDate}</Sc.PublishDate>
-            <Link to={`/review/${d.isbn}`}>
-              <Sc.ReviewCount>Reviews: {d.reviews.length}</Sc.ReviewCount>
-            </Link>
+            <Sc.ReviewCount>Reviews: {d.reviews.length}</Sc.ReviewCount>
+
+            <Sc.StyledLink to={`/review/${d.isbn}`}>
+              <Button variant='tertiary'>Read all Reviews</Button>
+            </Sc.StyledLink>
           </Sc.BookMetadata>
         </Sc.BookWrapper>
       )

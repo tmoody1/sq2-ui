@@ -22,6 +22,24 @@
             "text": "I also agree"
           }
         ]
+      },
+      {
+        "id": "978-0141033006-02",
+        "author": "Steve",
+        "text": "A tour de force of dystopian pulp fiction",
+        "likes": 23,
+        "comments": [
+          {
+            "author": "Lara",
+            "id": "01",
+            "text": "Too true"
+          },
+          {
+            "author": "Rudolph",
+            "id": "02",
+            "text": "I love Christmas"
+          }
+        ]
       }
     ]
   },
