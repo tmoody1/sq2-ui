@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { compose, lifecycle } from 'recompose'
+import data from './mocks/bookData.json';
+import * as Sc from './styledComponents';
 
-function App() {
+const App = compose(
+  lifecycle(
+  )
+)(() => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Sc.AppWrapper>
+      <Sc.Header>
+        <Sc.HeaderText>SQ2 Book Reviews</Sc.HeaderText>
+      </Sc.Header>
+      <Sc.Body>
+        {data.map(d => {
+          console.log('data', data)
+          return (
+            <Sc.BookWrapper>
+              {d.title}
+            </Sc.BookWrapper>
+          )
+        })}
+      </Sc.Body>
+    </Sc.AppWrapper>
   );
-}
+})
 
 export default App;
