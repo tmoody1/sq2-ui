@@ -1,7 +1,8 @@
 import { map } from 'ramda'
-import useAxios from 'axios-hooks'
+import { like } from '../../services'
 
 export const onLike = (currentBook, reviewId, setCurrentBook) => {
+  like(reviewId)
   const updatedLikeCount = map(review => {
     if ( review.id === reviewId) {
       return {
