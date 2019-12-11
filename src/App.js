@@ -1,10 +1,10 @@
 import React from 'react';
-import data from './mocks/bookData.json';
+import dataMock from './mocks/bookData.json';
 import * as Sc from './styledComponents';
-
 import { getInitialData } from './services';
 import BookList from './bookList/bookList.jsx';
 import BookReviews from './bookReviews/bookReviews.jsx';
+import Header from './header'
 
 import {
   BrowserRouter as Router,
@@ -12,20 +12,28 @@ import {
   Route,
 } from "react-router-dom";
 
+import useAxios from 'axios-hooks'
+
 const App = () => {
+
+  const [{ data, loading, error }, refetch] = useAxios(
+    'http://35.246.56.181:30090/books'
+  )
+
+  console.log('test', data)
+  console.log('loading', loading)
+
   return (
     <Router>
       <Sc.AppWrapper>
-        <Sc.Header>
-          <Sc.HeaderText>SQ2 Book Club</Sc.HeaderText>
-        </Sc.Header>
+        <Header />
         <Sc.Body>
           <Switch>
           <Route path='/review/:isbn'>
-              <BookReviews {...{ books: data }} />
+              <BookReviews {...{ books: dataMock }} />
             </Route>
             <Route path='/'>
-              <BookList {...{ books: data }}/>
+              <BookList {...{ books: dataMock }}/>
             </Route>
           </Switch>
         </Sc.Body>
