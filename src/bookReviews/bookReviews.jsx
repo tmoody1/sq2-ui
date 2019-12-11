@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import * as Sc from './styledComponents'
-import { Card, Button, IconMono, Flex } from '@imanage/react-ice'
+import { Card, Button, IconMono, Flex, Text } from '@imanage/react-ice'
 import { useParams } from 'react-router-dom'
 import { path } from 'ramda'
 
@@ -30,7 +30,11 @@ const BookReviews = ({ books, likeReview }) => {
   }
 
   return (
-    currentBook.reviews.map((review, i) => {
+    <Fragment>
+      <Sc.BookTitle>
+        <Text.Heading1>{currentBook.title}</Text.Heading1>
+      </Sc.BookTitle>
+      {currentBook.reviews.map((review, i) => {
       const comments = path(['comments'])(review) || null
       return (
         <Sc.ReviewContainer key={i}>
@@ -75,7 +79,8 @@ const BookReviews = ({ books, likeReview }) => {
 
         </Sc.ReviewContainer>
       )
-    })
+    })}
+    </Fragment>
   )
 }
 

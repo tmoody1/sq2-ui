@@ -42,6 +42,14 @@ export const AddComment = styled.div`
   margin-top: 20px;
 `
 
+export const BookTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+`
+
 export const CommentInputContainer = styled(Flex)`
   width: 100%;
   flex-direction: column;
