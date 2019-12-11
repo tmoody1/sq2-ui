@@ -1,7 +1,7 @@
 import { map } from 'ramda'
+import useAxios from 'axios-hooks'
 
 export const appendComment = (currentBook, name, comment, reviewId) => {
-  // service request
   const reviewsPlusComment = map(review => {
     if (review.id === reviewId) {
       return {

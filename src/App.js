@@ -30,10 +30,13 @@ const App = () => {
         <Sc.Body>
           <Switch>
           <Route path='/review/:isbn'>
-              <BookReviews {...{ books: dataMock }} />
+              {data && <BookReviews {...{ books: data }} />}
             </Route>
             <Route path='/'>
-              <BookList {...{ books: dataMock }}/>
+              {!data || loading
+                ? <div>loading...</div>
+                : <BookList {...{ books: data }}/>
+              }
             </Route>
           </Switch>
         </Sc.Body>
